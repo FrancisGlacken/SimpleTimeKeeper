@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">PunchClockMockup2</string>
+    <string name="start">Start</string>
+    <string name="menu">Menu</string>
+    <string name="list">List</string>
+    <string name="clock">clock</string>
+    <string name="stop">stop</string>
+    <string name="toggle_start">Start</string>
+    <string name="toggle_pause">Pause</string>
+    <string name="buttonstartpause">ButtonStartPause</string>
+    <string name="toast_message_started">Timer Started</string>
+    <string name="toast_message_paused">Timer Paused</string>
+    <string name="set_timer">00:00:00</string>
+</resources>
+
