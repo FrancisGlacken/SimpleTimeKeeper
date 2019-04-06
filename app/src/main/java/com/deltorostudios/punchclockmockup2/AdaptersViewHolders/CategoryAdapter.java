@@ -9,12 +9,14 @@ import android.widget.TextView;
 
 import com.deltorostudios.punchclockmockup2.Database.Category;
 import com.deltorostudios.punchclockmockup2.R;
+import com.deltorostudios.punchclockmockup2.Util.FormatMillisIntoTimer;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryHolder> {
 
+    private FormatMillisIntoTimer form = new FormatMillisIntoTimer();
     private List<Category> categoryList = new ArrayList<>();
 
     public void setCategories(List<Category> categories) {
@@ -33,7 +35,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     public void onBindViewHolder(@NonNull CategoryHolder categoryHolder, int position) {
         Category category = categoryList.get(position);
         categoryHolder.categoryTitleTextView.setText(category.getTitle());
-        categoryHolder.categoryTotalTimeView.setText(category.getTotalTime()+"");
+        categoryHolder.categoryTotalTimeView.setText(form.FormatMillisIntoDHM(category.getTotalTime()));
     }
 
     @Override
