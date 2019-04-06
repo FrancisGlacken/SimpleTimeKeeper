@@ -13,6 +13,7 @@ import com.deltorostudios.punchclockmockup2.Fragments.TimerFragment;
 import com.deltorostudios.punchclockmockup2.R;
 
 public class MainActivity extends AppCompatActivity {
+    //Todo: testing github
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
