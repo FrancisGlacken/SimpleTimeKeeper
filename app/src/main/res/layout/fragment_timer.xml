@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TimerFragment">
+    tools:context=".Fragments.TimerFragment">
 
     <TextView
         android:id="@+id/textTimer"
@@ -28,7 +28,6 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="30dp"
         android:checked="false"
-        android:onClick="StartPause"
         android:textOff="@string/toggle_start"
         android:textOn="@string/toggle_pause"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +40,6 @@
         android:layout_width="240dp"
         android:layout_height="60dp"
         android:layout_marginTop="30dp"
-        android:onClick="Stop"
         android:text="@string/stop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

@@ -4,7 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    tools:context=".Fragments.HomeFragment">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/mainRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/category_card_view"/>
+
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Add Category"
+        app:layout_constraintTop_toBottomOf="@+id/mainRecyclerView"
+        app:layout_constraintLeft_toLeftOf="@+id/mainRecyclerView"/>
+
 
 
 
