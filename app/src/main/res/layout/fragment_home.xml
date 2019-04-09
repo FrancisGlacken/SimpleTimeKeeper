@@ -28,7 +28,4 @@
         app:layout_constraintTop_toBottomOf="@+id/mainRecyclerView"
         app:layout_constraintLeft_toLeftOf="@+id/mainRecyclerView"/>
 
-
-
-
 </android.support.constraint.ConstraintLayout>

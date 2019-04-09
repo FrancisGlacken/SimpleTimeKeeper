@@ -6,14 +6,15 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.deltorostudios.punchclockmockup2.AdaptersViewHolders.CategoryAdapter;
+import com.deltorostudios.punchclockmockup2.AdaptersViewHolders.TimeEntryCardAdapter;
 import com.deltorostudios.punchclockmockup2.Database.Category;
 import com.deltorostudios.punchclockmockup2.ViewModels.HomeViewModel;
 import com.deltorostudios.punchclockmockup2.R;
@@ -29,6 +30,8 @@ public class HomeFragment extends Fragment {
         // Required empty public constructor
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -36,20 +39,23 @@ public class HomeFragment extends Fragment {
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
 
         final Button addButton = view.findViewById(R.id.addButton);
-        final RecyclerView recyclerView = view.findViewById(R.id.mainRecyclerView);
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1));
+        final RecyclerView cardRecyclerView = view.findViewById(R.id.mainRecyclerView);
+        final RecyclerView timeEntryRecyclerView = view.findViewById(R.id.mainRecyclerView);
+        cardRecyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1));
+//        timeEntryRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
 
-        final CategoryAdapter adapter = new CategoryAdapter();
-        recyclerView.setAdapter(adapter);
+        final CategoryAdapter catAdapter = new CategoryAdapter();
+        cardRecyclerView.setAdapter(catAdapter);
+
+//        final TimeEntryCardAdapter timeAdapter = new TimeEntryCardAdapter();
+//        timeEntryRecyclerView.setAdapter(timeAdapter);
 
         homeViewModel.getAllCategories().observe(this, new Observer<List<Category>>() {
             @Override
             public void onChanged(@Nullable List<Category> categories) {
-                adapter.setCategories(categories);
+                catAdapter.setCategories(categories);
             }
         });
-
-        recyclerView.setAdapter(adapter);
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
